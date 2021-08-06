@@ -1,0 +1,50 @@
+/* Remove margins and padding from the list */
+#myUL ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+#myUL ul li {
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  cursor: pointer;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  padding: 30px 100px 10px 10px;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.addBtn {
+  background-color: #5a618d;
+}
