@@ -23,8 +23,8 @@ function storeItems() {
 
 function displayItems() {
   var storedValues = localStorage.myitems;
-    if (!storedValues) {
-    ul.innerHTML = ' ';
+if (!storedValues) {
+    ul.innerHTML = '<li class="w3-display-container">Make a list<button class="w3-right w3-btn w3-small" onclick="removeItem(this)" type="button">x</button></li>';
   } else {
     ul.innerHTML = storedValues;
   }
