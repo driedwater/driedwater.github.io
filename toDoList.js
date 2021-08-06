@@ -19,16 +19,15 @@ function newElement() {
 
 function storeItems() {
   localStorage.myitems = ul.innerHTML;
-  if (!storedValues) {
-    ul.innerHTML = ' ';
-  } else {
-    ul.innerHTML = storedValues;
-  }
 }
 
 function displayItems() {
   var storedValues = localStorage.myitems;
-  ul.innerHTML = storedValues;
+    if (!storedValues) {
+    ul.innerHTML = ' ';
+  } else {
+    ul.innerHTML = storedValues;
+  }
 }
 
 function removeItem(e) {
