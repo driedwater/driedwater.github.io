@@ -8,6 +8,7 @@
     <script src='calculator.js'></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="questionGenerator.js"></script>
   </head>
   <body>
     <!-- Sidebar/menu -->
@@ -113,6 +114,15 @@
       <p>[You can always skip these steps, this is just an example / way to think of adding and subtracting algebra]</p>
       <p>Lastly, we remove the brackets and write out the numbers first, followed by the alphabet.</p>
       <p>\(3x\)</p>
+
+      <hr>
+      <p><b>Questions</b></p>
+      <p id="displayQn"></p>
+      <input class="w3-input w3-half" type="text" id="question">
+      <button class="w3-button" onclick="answerChecker()">submit</button>
+      <button class="w3-button" onclick="questionGenerator()">generate</button>
+      <hr>
+
       <p>Similarity, subtraction works the same way, but instead of adding, we subtract the numbers.</p>
       <p>\(3x - x = 2x\)</p>
       <h4>Question: Can we add \(3x^2 + x\) ?</h4>
@@ -129,7 +139,11 @@
       <p>\(3x \div 3 = x\)</p>
       <p>Similar to multiplication, we separate each component and divide them.</p>
       <p>\(3x \div 3x = 1\)</p>
+      <hr>
+      <p>Questions</p>
 
     </div>
   </body>
 </html>
+
+
