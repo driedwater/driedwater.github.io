@@ -1,5 +1,3 @@
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
 var ul = document.getElementById('myUL');
 displayItems()
 
@@ -23,7 +21,7 @@ function storeItems() {
 
 function displayItems() {
   var storedValues = localStorage.myitems;
-if (!storedValues) {
+  if (!storedValues) {
     ul.innerHTML = ' ';
   } else {
     ul.innerHTML = storedValues;
@@ -33,4 +31,9 @@ if (!storedValues) {
 function removeItem(e) {
   e.parentElement.remove();
   localStorage.setItem('myitems', ul.innerHTML)
+}
+
+function clearList() {
+  ul.innerHTML = '';
+  localStorage.clear();
 }
