@@ -1,31 +1,34 @@
 {
-  "name": "spectre",
-  "type": "module",
-  "version": "1.0.2",
-  "packageManager": "pnpm@9.15.0",
+  "name": "blogster",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "packages/@repoconfig/*",
+    "packages/*",
+    "themes/*",
+    "templates"
+  ],
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "start": "node dist/server/entry.mjs",
-    "preview": "astro preview",
-    "astro": "astro",
-    "postbuild": "pagefind --site dist/client"
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "build:minimal": "turbo run @theme/minimal#build",
+    "build:sleek": "turbo run @theme/sleek#build",
+    "build:newspaper": "turbo run @theme/newspaper#build",
+    "build:bubblegum": "turbo run @theme/bubblegum#build",
+    "manypkg:check": "manypkg check",
+    "manypkg:fix": "manypkg fix",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.0",
-    "@astrojs/node": "^9.1.3",
-    "@astrojs/sitemap": "^3.2.1",
-    "@iconify-json/lucide": "^1.2.20",
-    "@iconify-json/simple-icons": "^1.2.18",
-    "@iconify/utils": "^2.2.1",
-    "@shikijs/themes": "^1.26.1",
-    "astro": "^5.5.2",
-    "astro-expressive-code": "^0.38.3",
-    "sharp": "^0.33.5"
+    "@manypkg/cli": "^0.19.2",
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest"
   },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "pagefind": "^1.3.0",
-    "shiki": "^1.26.1"
-  }
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@1.22.19"
 }
